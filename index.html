@@ -3,44 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codexx Website</title>
+    <title>GoalLine | Soccer Gear & Apparel</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Codexx</h1>
+    <header class="top-nav">
+        <div class="brand">GoalLine</div>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#collections">Collections</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <button class="cart-button" id="cart-toggle" aria-label="Toggle cart">
+            🛒 <span id="cart-count">0</span>
+        </button>
     </header>
 
-    <section id="home">
-        <h2>Home</h2>
-        <p>This is a simple HTML website built for Codexx.</p>
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <p class="eyebrow">New season drop</p>
+            <h1>Everything you need for match day.</h1>
+            <p class="subtext">Premium football boots, official jerseys, fan gear, and training essentials—curated for players and supporters.</p>
+            <div class="hero-actions">
+                <a class="btn primary" href="#shop">Shop best sellers</a>
+                <a class="btn ghost" href="#collections">View collections</a>
+            </div>
+            <div class="badges">
+                <span>✓ Free shipping over $75</span>
+                <span>✓ 30-day returns</span>
+                <span>✓ Authentic club kits</span>
+            </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+            <div class="ball"></div>
+            <div class="pitch"></div>
+        </div>
     </section>
 
-    <section id="about">
-        <h2>About</h2>
-        <p>The Codexx project demonstrates automated development workflows.</p>
+    <section class="section" id="collections">
+        <div class="section-header">
+            <div>
+                <p class="eyebrow">Shop by category</p>
+                <h2>Find your perfect fit</h2>
+                <p class="subtext">Lightweight boots for speed, cushioned boots for control, and supporter kits for every league.</p>
+            </div>
+        </div>
+        <div class="categories">
+            <div class="category-card" data-filter="boots">
+                <div class="icon">👟</div>
+                <h3>Boots</h3>
+                <p>Firm ground, soft ground, turf, and indoor silhouettes.</p>
+            </div>
+            <div class="category-card" data-filter="apparel">
+                <div class="icon">🎽</div>
+                <h3>Apparel</h3>
+                <p>Official jerseys, training tops, shorts, and lifestyle tees.</p>
+            </div>
+            <div class="category-card" data-filter="equipment">
+                <div class="icon">🥅</div>
+                <h3>Equipment</h3>
+                <p>Match balls, keeper gloves, shin guards, and recovery tools.</p>
+            </div>
+            <div class="category-card" data-filter="fan">
+                <div class="icon">🏟️</div>
+                <h3>Fan Gear</h3>
+                <p>Scarves, caps, and limited club memorabilia.</p>
+            </div>
+        </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <form id="contact-form">
-            <label>Name:<br><input type="text" name="name" required></label><br>
-            <label>Email:<br><input type="email" name="email" required></label><br>
-            <label>Message:<br><textarea name="message" required></textarea></label><br>
-            <button type="submit">Send</button>
+    <section class="section" id="shop">
+        <div class="section-header">
+            <div>
+                <p class="eyebrow">Shop the lineup</p>
+                <h2>Premium soccer products</h2>
+                <p class="subtext">Handpicked gear trusted by athletes and supporters around the world.</p>
+            </div>
+            <div class="filters">
+                <input type="search" id="search" placeholder="Search products or clubs..." aria-label="Search products">
+                <select id="category-filter" aria-label="Filter by category">
+                    <option value="all">All categories</option>
+                    <option value="boots">Boots</option>
+                    <option value="apparel">Apparel</option>
+                    <option value="equipment">Equipment</option>
+                    <option value="fan">Fan gear</option>
+                </select>
+            </div>
+        </div>
+        <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <section class="section highlight">
+        <div class="highlight-card">
+            <div>
+                <p class="eyebrow">Match-ready bundles</p>
+                <h2>Save 20% when you bundle boots + ball + top.</h2>
+                <p class="subtext">Add any three bundle items to unlock automatic savings at checkout.</p>
+                <div class="hero-actions">
+                    <a class="btn primary" href="#shop">Build your bundle</a>
+                    <span class="chip">Limited time</span>
+                </div>
+            </div>
+            <div class="bundle-visual" aria-hidden="true"></div>
+        </div>
+    </section>
+
+    <section class="section testimonials">
+        <div class="section-header">
+            <p class="eyebrow">Trusted by players</p>
+            <h2>What our community says</h2>
+            <p class="subtext">From grassroots clubs to weekend warriors, GoalLine outfits the game.</p>
+        </div>
+        <div class="testimonial-grid">
+            <article class="testimonial">
+                <p>“The boots arrived molded to my foot—zero break-in time. Customer support was brilliant.”</p>
+                <span class="author">— Jordan, semi-pro winger</span>
+            </article>
+            <article class="testimonial">
+                <p>“Bundled a new ball, gloves, and jersey and saved a ton. Quality gear and fast shipping.”</p>
+                <span class="author">— Casey, club keeper</span>
+            </article>
+            <article class="testimonial">
+                <p>“Love the authentic kits. The product finder made it easy to choose the right studs for wet pitches.”</p>
+                <span class="author">— Riley, Sunday league coach</span>
+            </article>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="section-header">
+            <div>
+                <p class="eyebrow">Need sizing help?</p>
+                <h2>Talk to a gear specialist</h2>
+                <p class="subtext">Send us a message and we’ll recommend the best fit for your playing style.</p>
+            </div>
+        </div>
+        <form id="contact-form" class="contact-form">
+            <div class="form-row">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-row">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-row">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button class="btn primary" type="submit">Send message</button>
+            <p id="form-status" aria-live="polite"></p>
         </form>
-        <p id="form-status"></p>
     </section>
 
-    <footer>
-        <p>&copy; 2023 Codexx</p>
+    <aside class="cart-panel" id="cart-panel" aria-label="Shopping cart" aria-hidden="true">
+        <header class="cart-header">
+            <h3>Your cart</h3>
+            <button id="close-cart" aria-label="Close cart">×</button>
+        </header>
+        <div id="cart-items" class="cart-items"></div>
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <strong id="cart-subtotal">$0.00</strong>
+            </div>
+            <div class="summary-row saving" id="bundle-saving" hidden>
+                <span>Bundle savings</span>
+                <strong>-20%</strong>
+            </div>
+            <button class="btn primary full" id="checkout-btn">Checkout</button>
+        </div>
+    </aside>
+
+    <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h4>GoalLine</h4>
+                <p>Authentic soccer gear, delivered fast.</p>
+            </div>
+            <div>
+                <h4>Support</h4>
+                <ul>
+                    <li>Shipping & returns</li>
+                    <li>Size guides</li>
+                    <li>Club partnerships</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Stay in the loop</h4>
+                <p>Get weekly drops and exclusive promotions.</p>
+                <form class="newsletter">
+                    <input type="email" placeholder="Email address" aria-label="Newsletter email">
+                    <button type="button" class="btn ghost">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <p class="copyright">© 2024 GoalLine. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
